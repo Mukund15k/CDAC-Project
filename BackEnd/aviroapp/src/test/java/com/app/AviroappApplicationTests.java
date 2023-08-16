@@ -1,10 +1,10 @@
-package com.app.demo;
+package com.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AviroBackendApplicationTests {
+class AviroappApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package com.app.demo;
+package com.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AviroBackendApplication {
+public class AviroappApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AviroBackendApplication.class, args);
+		SpringApplication.run(AviroappApplication.class, args);
 	}
 
 }

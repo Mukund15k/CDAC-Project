@@ -8,11 +8,11 @@
 		<version>2.7.14</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.app</groupId>
-	<artifactId>aviro-backend</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>aviroapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>aviro-backend</name>
-	<description>Demo project for Spring Boot</description>
+	<name>aviroapp</name>
+	<description>Aviro web services</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -42,6 +42,11 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -53,6 +58,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

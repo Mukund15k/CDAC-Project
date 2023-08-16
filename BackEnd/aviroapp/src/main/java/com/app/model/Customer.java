@@ -20,23 +20,23 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table(name = "employees")
+@Table(name = "customers")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-public class Employee extends BaseEntity {
+public class Customer {
 
 	@NotBlank(message = "First name can't be blank")
 	@Length(min = 4, max = 20, message = "Invalid First name!!")
 	@Column(name = "first_name", length = 20)
-	private String empFirstName;
+	private String custFirstName;
 
 	@NotBlank(message = "Last name can't be blank")
 	@Length(min = 4, max = 20, message = "Invalid last name!!")
 	@Column(name = "last_name", length = 20)
-	private String empLastName;
+	private String custLastName;
 
 	@Column(name = "pan_no", length = 10, unique = true)
 	private String panCardNo;
@@ -47,7 +47,7 @@ public class Employee extends BaseEntity {
 	@Column(length = 10, unique = true)
 	@Email(message = "Invalid Email!!")
 	private String emailId;
-	
+
 	@Column(length = 30, unique = true)
 	private String password;
 
@@ -59,20 +59,13 @@ public class Employee extends BaseEntity {
 
 	@Column(length = 30)
 	private String location;
-	
+
 	@Column(length = 6)
 	private Long pinCode;
-	
+
 	@Enumerated(EnumType.STRING)
 	@Column(length = 10)
 	@NotNull(message = "Category must be supplied")
-	private Category category;
-
-	@Enumerated(EnumType.STRING)
-	@Column(length = 10)
-	@NotNull(message = "Department must be supplied")
-	private Departments dept;
-
-	
+	private CustomerCategory custCategory;
 
 }

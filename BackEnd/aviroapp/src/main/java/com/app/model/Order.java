@@ -2,19 +2,30 @@ package com.app.model;
 
 import java.time.LocalDate;
 
-public class Order {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name = "orders")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+public class Order extends BaseEntity {
+
 	
-	private Long orderId;
-	private String prodName;
-	private String description;
+	private Product product;
 	private Customer customer;
-	private String city;
-	private String address;
-	private Long pinCode;
-	private Long mobile;
-	private LocalDate orderDate;
-	private LocalDate delivaryDate;
 	private Employee employee;
-	
+	private LocalDate orderDate;
+	private LocalDate startDate;
+	private LocalDate endDate;
 
 }

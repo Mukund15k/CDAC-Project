@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -26,7 +29,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Customer {
+public class Customer extends BaseEntity {
 
 	@NotBlank(message = "First name can't be blank")
 	@Length(min = 4, max = 20, message = "Invalid First name!!")
@@ -37,9 +40,6 @@ public class Customer {
 	@Length(min = 4, max = 20, message = "Invalid last name!!")
 	@Column(name = "last_name", length = 20)
 	private String custLastName;
-
-	@Column(name = "pan_no", length = 10, unique = true)
-	private String panCardNo;
 
 	@Column(name = "adhaar_no", length = 10, unique = true)
 	private String adhaarCardNo;
@@ -52,12 +52,12 @@ public class Customer {
 	private String password;
 
 	@Column(length = 10, unique = true)
-	private Long phoneNo;
+	private Long mobileNo;
 
-	@Column(length = 30)
+	@Column(length = 50)
 	private String address;
 
-	@Column(length = 30)
+	@Column(length = 20)
 	private String location;
 
 	@Column(length = 6)

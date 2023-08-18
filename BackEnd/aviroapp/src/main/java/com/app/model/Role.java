@@ -1,6 +1,6 @@
 package com.app.model;
 
-public enum Category {
+public enum Role {
 	ADMIN,EMPLOYEE;
 
 }

@@ -42,7 +42,7 @@ public class Employee extends BaseEntity {
 	private String panCardNo;
 
 	@Column(name = "adhaar_no", length = 10, unique = true)
-	private String adhaarCardNo;
+	private Long adhaarCardNo;
 
 	@Column(length = 10, unique = true)
 	@Email(message = "Invalid Email!!")
@@ -52,12 +52,12 @@ public class Employee extends BaseEntity {
 	private String password;
 
 	@Column(length = 10, unique = true)
-	private Long phoneNo;
+	private Long mobileNo;
 
-	@Column(length = 30)
+	@Column(length = 50)
 	private String address;
 
-	@Column(length = 30)
+	@Column(length = 20)
 	private String location;
 	
 	@Column(length = 6)
@@ -66,7 +66,7 @@ public class Employee extends BaseEntity {
 	@Enumerated(EnumType.STRING)
 	@Column(length = 10)
 	@NotNull(message = "Category must be supplied")
-	private Category category;
+	private Role role;
 
 	@Enumerated(EnumType.STRING)
 	@Column(length = 10)
